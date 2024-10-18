@@ -1,0 +1,29 @@
+<h2>CaroGBT</h2>
+<a href="/system-prompt">System Prompt</a>
+
+
+<ul id="ChatMassageContainer">
+  <li *ngFor="let message of chatMessages()" [ngClass]="{'user-class': message.role === 'user', 'assistant-class': message.role === 'assistant'}">
+      <markdown [data]= message.content ></markdown>
+  </li>
+</ul>
+
+
+
+
+
+
+
+<form (submit)="answerQuestion()" (reset)="resetBot()">
+  <div>
+    <input type="text" list="suggestions" id="question" name="question" placeholder="Enter your question here" [(ngModel)]="question">
+    <datalist id="suggestions">
+      <option> Are Dolphins fish</option>
+      <option> What should i do as a tourist in vienna</option>
+    </datalist>
+    <button type="submit">Answer</button>
+    <button type="reset">Start Over</button>
+
+  </div>
+</form>
+
