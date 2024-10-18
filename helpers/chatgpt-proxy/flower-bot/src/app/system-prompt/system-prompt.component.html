@@ -1,0 +1,5 @@
+<form (submit)="submitSystemMessage()">
+  <textarea id="answer" name="answer" style="height: 300px;width:300px;" placeholder="Enter chatbot's behavior, providing instructions, context, or customization for the chatbot's responses" [(ngModel)]="answer"></textarea>
+  <button type="submit">Submit System message</button>
+  <a href="/answer-question">Answer Question</a>
+</form>
